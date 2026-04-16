@@ -1076,7 +1076,7 @@ namespace esphome
                 if (item.time_sent == 0 && now - item.time > 100000 && item.resend_count == 0 && item.retry_count == 0)
                 {
                     // Both the outdoor and the indoor unit must be awake before we can send a command
-                    indoor_unit_awake = false;
+                    indoor_unit_awake = true;
                     item.retry_count++;
                     LOGD("Device is likely sleeping, waking...");
                     send_register_controller(target);
