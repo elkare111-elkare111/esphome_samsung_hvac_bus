@@ -1073,7 +1073,7 @@ namespace esphome
             // wake the unit up.
             for (auto &item : nonnasa_requests)
             {
-                if (item.time_sent == 0 && now - item.time > 1000 && item.resend_count == 0 && item.retry_count == 0)
+                if (item.time_sent == 0 && now - item.time > 100000 && item.resend_count == 0 && item.retry_count == 0)
                 {
                     // Both the outdoor and the indoor unit must be awake before we can send a command
                     indoor_unit_awake = false;
